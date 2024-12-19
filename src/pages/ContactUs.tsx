@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import Footer from "@/components/Footer";
+import { ArrowLeft } from "lucide-react";
 
 const ContactUs = () => {
   const navigate = useNavigate();
@@ -65,14 +66,16 @@ const ContactUs = () => {
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-background to-secondary">
       <main className="flex-grow">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <Button
+            variant="ghost"
+            onClick={() => navigate("/")}
+            className="mb-6"
+          >
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Back to Home
+          </Button>
+          
           <div className="mb-8">
-            <Button
-              variant="outline"
-              onClick={() => navigate("/")}
-              className="mb-6"
-            >
-              ← Back to Home
-            </Button>
             <h1 className="text-4xl font-bold text-center mb-4">Contact Us</h1>
             <p className="text-center text-muted-foreground">
               Have a question or feedback? We'd love to hear from you.
@@ -111,7 +114,7 @@ const ContactUs = () => {
 
             <div>
               <label htmlFor="reason" className="block text-sm font-medium mb-2">
-                Reason for Contact
+                Message
               </label>
               <Textarea
                 id="reason"
