@@ -1,53 +1,82 @@
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import Footer from "@/components/Footer";
 
 const Privacy = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="min-h-screen bg-background flex flex-col">
-      <div className="flex-grow max-w-4xl mx-auto px-4 py-8">
-        <Link to="/">
-          <Button variant="ghost" className="mb-6">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-background to-secondary">
+      <main className="flex-grow">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <Button
+            variant="ghost"
+            onClick={() => navigate("/")}
+            className="mb-6"
+          >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Home
           </Button>
-        </Link>
-        
-        <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
-        
-        <div className="prose prose-gray max-w-none">
-          <h2 className="text-2xl font-semibold mt-6 mb-4">Information We Collect</h2>
-          <p className="mb-4">We collect information that you provide directly to us when using the AI Outfit Generator, including:</p>
-          <ul className="list-disc pl-6 mb-6">
-            <li>Style preferences</li>
-            <li>Occasion selections</li>
-            <li>Age and gender preferences</li>
-            <li>Usage data and interactions with our service</li>
-          </ul>
+          
+          <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
+          
+          <div className="prose prose-gray max-w-none">
+            <h2>1. Information We Collect</h2>
+            <p>
+              We collect information that you provide directly to us, including when you create an account,
+              use our services, or communicate with us. This may include:
+            </p>
+            <ul>
+              <li>Name and contact information</li>
+              <li>Account credentials</li>
+              <li>Style preferences and outfit choices</li>
+              <li>Usage data and interaction with our services</li>
+            </ul>
 
-          <h2 className="text-2xl font-semibold mt-6 mb-4">How We Use Your Information</h2>
-          <p className="mb-4">We use the information we collect to:</p>
-          <ul className="list-disc pl-6 mb-6">
-            <li>Generate personalized outfit recommendations</li>
-            <li>Improve our AI algorithms and service quality</li>
-            <li>Enhance user experience and interface</li>
-            <li>Analyze trends and user behavior</li>
-          </ul>
+            <h2>2. How We Use Your Information</h2>
+            <p>
+              We use the information we collect to:
+            </p>
+            <ul>
+              <li>Provide and improve our services</li>
+              <li>Personalize your experience</li>
+              <li>Communicate with you about our services</li>
+              <li>Ensure security and prevent fraud</li>
+            </ul>
 
-          <h2 className="text-2xl font-semibold mt-6 mb-4">Data Security</h2>
-          <p className="mb-4">
-            We implement appropriate security measures to protect your personal information against unauthorized access, 
-            alteration, disclosure, or destruction. Our security practices include:
-          </p>
-          <ul className="list-disc pl-6 mb-6">
-            <li>Encryption of data in transit and at rest</li>
-            <li>Regular security assessments</li>
-            <li>Limited access to personal information</li>
-            <li>Continuous monitoring of our systems</li>
-          </ul>
+            <h2>3. Information Sharing</h2>
+            <p>
+              We do not sell your personal information. We may share your information with:
+            </p>
+            <ul>
+              <li>Service providers who assist in our operations</li>
+              <li>Law enforcement when required by law</li>
+              <li>Other parties with your consent</li>
+            </ul>
+
+            <h2>4. Your Rights</h2>
+            <p>
+              You have the right to:
+            </p>
+            <ul>
+              <li>Access your personal information</li>
+              <li>Correct inaccurate information</li>
+              <li>Request deletion of your information</li>
+              <li>Opt-out of certain data sharing</li>
+            </ul>
+
+            <h2>5. Contact Us</h2>
+            <p>
+              If you have any questions about this Privacy Policy, please contact us at:
+              <br />
+              Email: privacy@aioutfitgenerator.com
+              <br />
+              Address: 123 Fashion Street, Style City, ST 12345
+            </p>
+          </div>
         </div>
-      </div>
+      </main>
       <Footer />
     </div>
   );

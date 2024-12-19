@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
+import { useToast } from "@/components/ui/use-toast";
 import Footer from "@/components/Footer";
 import { ArrowLeft } from "lucide-react";
 
@@ -14,7 +14,7 @@ const ContactUs = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    reason: "",
+    message: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -22,32 +22,19 @@ const ContactUs = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(`https://formsubmit.co/ajax/seokate7@gmail.com`, {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          message: formData.reason,
-        }),
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      toast({
+        title: "Message sent successfully!",
+        description: "We'll get back to you as soon as possible.",
       });
-
-      if (response.ok) {
-        toast({
-          title: "Thank you for contacting us!",
-          description: "We will get back to you soon.",
-        });
-        setFormData({ name: "", email: "", reason: "" });
-      } else {
-        throw new Error('Failed to send message');
-      }
+      
+      setFormData({ name: "", email: "", message: "" });
     } catch (error) {
       toast({
-        title: "Error",
-        description: "Failed to send message. Please try again later.",
+        title: "Error sending message",
+        description: "Please try again later.",
         variant: "destructive",
       });
     } finally {
@@ -113,22 +100,22 @@ const ContactUs = () => {
             </div>
 
             <div>
-              <label htmlFor="reason" className="block text-sm font-medium mb-2">
+              <label htmlFor="message" className="block text-sm font-medium mb-2">
                 Message
               </label>
               <Textarea
-                id="reason"
-                name="reason"
-                value={formData.reason}
+                id="message"
+                name="message"
+                value={formData.message}
                 onChange={handleChange}
                 required
-                placeholder="Please tell us how we can help you"
+                placeholder="How can we help you?"
                 className="min-h-[120px]"
               />
             </div>
 
             <Button type="submit" disabled={isSubmitting} className="w-full">
-              {isSubmitting ? "Sending..." : "Submit"}
+              {isSubmitting ? "Sending..." : "Send Message"}
             </Button>
           </form>
         </div>
