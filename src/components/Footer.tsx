@@ -62,10 +62,7 @@ const Footer = () => {
                 <Youtube className="h-6 w-6" />
               </a>
             </div>
-             <h3 className="text-lg font-semibold mb-4">Other Educational Websites</h3>
-            <div className="flex space-x-4">
-              <Link to="https://practicerbtexam.com/" className="text-primary hover:underline">
-                  RBT Practice Exam
+             
                 </Link>
               
           </div>
