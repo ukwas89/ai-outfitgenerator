@@ -41,6 +41,11 @@ const Footer = () => {
                   ai to human text converter free
                 </Link>
               </li>
+                              <li>
+                <Link to="https://practicerbtexam.com/" className="text-primary hover:underline">
+                  RBT Practice Exam
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
