@@ -11,6 +11,7 @@ const Footer = () => {
             <p className="text-gray-600">
               An AI-powered fashion assistant that helps you create perfect outfits for any occasion.
             </p>
+        
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
@@ -61,6 +62,12 @@ const Footer = () => {
                 <Youtube className="h-6 w-6" />
               </a>
             </div>
+             <h3 className="text-lg font-semibold mb-4">Other Educational Websites</h3>
+            <div className="flex space-x-4">
+              <Link to="https://practicerbtexam.com/" className="text-primary hover:underline">
+                  RBT Practice Exam
+                </Link>
+              
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-gray-200 text-center text-gray-600">
